@@ -1,0 +1,27 @@
+apiVersion: uptimekuma.aleix.cloud/v1alpha1
+kind: Tag
+metadata:
+  name: test1
+spec:
+  color: "#000000"
+---
+apiVersion: uptimekuma.aleix.cloud/v1alpha1
+kind: Tag
+metadata:
+  name: test2
+spec:
+  color: "blue"
+---
+apiVersion: uptimekuma.aleix.cloud/v1alpha1
+kind: Monitor
+metadata:
+  name: test-webpage
+spec:
+  url: https://test-webpage.com
+  interval: 60
+  tags: []
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test-ns

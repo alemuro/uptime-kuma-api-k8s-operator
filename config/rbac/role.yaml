@@ -1,0 +1,74 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - networking.k8s.io
+  resources:
+  - ingresses
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - uptimekuma.aleix.cloud
+  resources:
+  - monitors
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - uptimekuma.aleix.cloud
+  resources:
+  - monitors/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - uptimekuma.aleix.cloud
+  resources:
+  - monitors/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - uptimekuma.aleix.cloud
+  resources:
+  - tags
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - uptimekuma.aleix.cloud
+  resources:
+  - tags/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - uptimekuma.aleix.cloud
+  resources:
+  - tags/status
+  verbs:
+  - get
+  - patch
+  - update
